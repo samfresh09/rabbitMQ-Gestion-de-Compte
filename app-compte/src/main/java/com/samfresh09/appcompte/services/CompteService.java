@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CompteService {
     private RabbitmqService rabbitmqService;
+
     public void createCompte(Compte compte) {
         //faire des traitement de creation de compte
         this.rabbitmqService.sendMessage(compte);
