@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class RabbitmqService {
     RabbitTemplate rabbitTemplate;
-    public void sendMessage(Compte compte) {
-        rabbitTemplate.convertAndSend(compte);
+    public void sendMessage(String exchange, String  key, Compte compte) {
+        rabbitTemplate.convertAndSend(exchange, key, compte);
     }
 
 }
